@@ -1,0 +1,27 @@
+.pagination li {
+  display: inline-block;
+  justify-content: center;
+  margin: 0 2px;
+  text-align: center;
+}
+
+.pagination button {
+  float: center;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  background-color: #8367d3;
+}
+
+.pagination button.active {
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #8367d3;
+  color: #fff;
+  font-size: 15px;
+}

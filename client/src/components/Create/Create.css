@@ -1,0 +1,77 @@
+.create__form {
+  width: 340px;
+  height: 750px;
+  border-radius: 8px;
+  box-shadow: 0 0 40px -10px #000;
+  margin: calc(30vh - 220px) auto;
+  padding: 20px 30px;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.form__title {
+  margin: 3px 0;
+  padding-bottom: 5px;
+  width: 115px;
+  color: rgb(63, 121, 230);
+  border-bottom: 1px solid rgb(63, 121, 230);
+}
+
+label:before {
+  content: attr(type);
+  display: block;
+  margin: 20px 0 0;
+  font-size: 12px;
+  color: #5a5a5a;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  background: none;
+  border: 0;
+  transition: all 0.3s;
+  border-bottom: 1px solid #bebed2;
+}
+
+.form select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.danger__error {
+  color: red;
+  font-size: 10px;
+}
+
+.border__error {
+  border: 1px solid red;
+}
+
+.form__button--back {
+  padding: 0.5rem 0.5rem;
+  font-size: 11px;
+  color: #fff;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 8%);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form__button {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  margin: 10px 40%;
+}
+
+.form__button--delete {
+  background-color: black;
+  color: white;
+}

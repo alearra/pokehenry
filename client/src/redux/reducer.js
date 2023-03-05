@@ -85,7 +85,7 @@ function reducer(state = initialState, action) {
             );
       if (filterpokemonstypes.length === 0) {
         filterpokemonstypes = aux3;
-        alert("Dear user there has not been found pokemon of that type");
+        alert("pokemon not found");
       }
       return {
         ...state,

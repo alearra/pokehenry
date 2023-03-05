@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Search.module.css";
+import "./Search.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getPokemonName } from "../../redux/actions";
@@ -16,7 +16,7 @@ function Search() {
   function handlerSubmit(e) {
     e.preventDefault();
     if (name === "") {
-      alert("Exact Pokémon Name Required");
+      alert("required name pokemon");
     } else {
       dispatch(getPokemonName(name));
     }
@@ -24,15 +24,15 @@ function Search() {
   }
 
   return (
-    <form onSubmit={(e) => handlerSubmit(e)} className={styles["form"]}>
+    <form onSubmit={(e) => handlerSubmit(e)} className="search__form">
       <input
         type="text"
-        className={styles["input"]}
+        className="search__input"
         placeholder="Search pokemon..."
         value={name}
         onChange={(e) => handlerInputChange(e)}
       />
-      <button type="submit" className={styles["reset"]}>
+      <button type="submit" className="search__reset">
         Search
       </button>
     </form>

@@ -1,22 +1,22 @@
 import React from "react";
-import styles from "./Page404.module.css";
-import img from "./../../image/404page.png";
+import "./Page404.css";
+import backVideo from "../../assets/media/sunmon.mp4";
 import { Link } from "react-router-dom";
 
 function Page404() {
   return (
-    <div className={styles["page-container"]}>
-      <img src={img} alt="404 not found" width="500px" heigth="300px" />
-      <div className={styles["page-title"]}>
-        <p>The page you were looking doesn't exist</p>
+    <section className="page">
+      <video className="page__backvideo" src={backVideo} autoPlay loop muted />
+      <div className="page__container">
         <Link to="/home">
-          <button className={styles["page-button-back"]}>
-            {" "}
-            🡠 Back to home
-          </button>
+          <button className="page__button"> 🡠 Return</button>
         </Link>
+        <p className="page__container--error">404</p>
+        <div className="page__title">
+          <p>Keep trying! May the force be with you.</p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,21 +1,19 @@
-.grid-container {
+.home__container {
   display: flex;
   grid-gap: 20px;
   flex-wrap: wrap;
   align-content: stretch;
   justify-content: space-evenly;
   align-items: baseline;
-  /* background-color: rgba(255, 255, 255, 0.505); */
 }
 
-.grid-item {
+.home__item {
   text-align: center;
   font-size: 30px;
   margin: 1rem 1rem 1rem 1rem;
 }
 
-/*group select and option */
-.box select {
+.home__box select {
   background-color: #8367d3;
   color: #fff;
   padding: 5px;
@@ -26,7 +24,7 @@
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 }
 
-.box::before {
+.home__box::before {
   width: 20%;
   height: 80%;
   text-align: center;
@@ -37,16 +35,16 @@
   pointer-events: none;
 }
 
-.box:hover::before {
+.home__box:hover::before {
   color: rgba(255, 255, 255, 0.6);
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.box select option {
+.home__box select option {
   padding: 10px;
 }
 
-.button-reset {
+.home__reset {
   display: inline-block;
   background-color: hsl(0, 0%, 8%);
   color: #fff;
@@ -55,11 +53,10 @@
   padding: 0.8rem 1rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  /* margin-top: 1rem; */
 }
 
 @media (min-width: 300px) and (max-width: 680px) {
-  .grid-container {
+  .home__container {
     grid-gap: 0px;
   }
 }

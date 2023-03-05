@@ -1,10 +1,10 @@
-.form button {
+.search__ button {
   border: none;
   background: none;
-  color: #8b8ba7;
+  color: #000;
 }
-/* styling of whole input container */
-.form {
+
+.search {
   --timing: 0.3s;
   --width-of-input: 200px;
   --height-of-input: 40px;
@@ -23,8 +23,8 @@
   transition: border-radius 0.5s ease;
   background: var(--input-bg, #fff);
 }
-/* styling of Input */
-.input {
+
+.search__input {
   font-size: 0.9rem;
   background-color: transparent;
   width: 100%;
@@ -33,8 +33,8 @@
   padding-block: 0.7em;
   border: none;
 }
-/* styling of animated border */
-.form:before {
+
+.search__form:before {
   content: "";
   position: absolute;
   background: var(--border-color);
@@ -47,34 +47,33 @@
   border-radius: 1px;
   transition: transform var(--timing) ease;
 }
-/* Hover on Input */
-.form:focus-within {
+
+.search__form:focus-within {
   border-radius: var(--after-border-radius);
 }
 
 input:focus {
   outline: none;
 }
-/* here is code of animated border */
-.form:focus-within:before {
+
+.search__form:focus-within:before {
   transform: scale(1);
 }
-/* styling of close button */
-/* == you can click the close button to remove text == */
-.reset {
+
+.search__reset {
   border: none;
   background: none;
   opacity: 0;
   visibility: hidden;
 }
-/* close button shown when typing */
+
 input:not(:placeholder-shown) ~ .reset {
   opacity: 1;
   visibility: visible;
 }
 
 @media (min-width: 300px) and (max-width: 680px) {
-  .form {
+  .search__form {
     width: auto;
   }
 }

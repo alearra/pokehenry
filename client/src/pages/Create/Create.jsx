@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import "../Create/Create.css";
+import backVideo from  "../../assets/media/sunmon.mp4"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getTypes, postPokemon } from "../../redux/actions";
@@ -46,7 +47,7 @@ function Create() {
         types: [...input.types, e.target.value],
       });
     } else {
-      alert("You can only choose one or two types for your new Pokemon.");
+      alert("You can choose types for your new Pokemon.");
     }
   }
 
@@ -74,13 +75,13 @@ function Create() {
   }
 
   return (
-    <>
+    <section className="create">
+      <video className="create__backvideo" src={backVideo} autoPlay loop muted />
       <form onSubmit={handleSubmit} className="create__form">
         <Link to="/home">
           <button className="form__button--back">Return</button>
         </Link>
         <br />
-        <legend className="form__title">CREATE POKEMON </legend>
         <label htmlFor="name">Name : </label>
         <input
           type="text"
@@ -162,7 +163,7 @@ function Create() {
         {errors.weight && <p className={"danger__error"}>{errors.weight}</p>}
         <br />
 
-        <label htmlFor="weight">CHOOSE ONLY TWO TYPES</label>
+        <label htmlFor="weight">CHOOSE TYPES</label>
         <select name="types" onChange={handleSelect}>
           {Alltypes?.map((type) => {
             return (
@@ -188,11 +189,11 @@ function Create() {
         <br />
         <div>
           <button type="submit" className="form__button">
-            SUBMIT
+            OK
           </button>
         </div>
       </form>
-    </>
+    </section>
   );
 }
 

@@ -1,4 +1,3 @@
-
 export default function Validate(input) {
   let errors = {};
   let validateLetters = /^[a-zA-Z]+$/;

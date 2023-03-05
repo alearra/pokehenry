@@ -1,0 +1,138 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.details__backvideo {
+  object-fit: cover;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.details__container {
+  display: flex;
+  grid-gap: 20px;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 5%;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.details__a {
+  content: "";
+  height: 370px;
+  width: 340px;
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+  position: absolute;
+  z-index: 5;
+}
+
+.details__a img {
+  margin-left: -100px;
+  margin-top: 80px;
+  min-width: 30rem;
+  max-width: 30rem;
+}
+
+.details__b {
+  content: "";
+  height: 395px;
+  width: 550px;
+  z-index: 3;
+  margin-left: 200px;
+}
+
+.details__info {
+  position: absolute;
+  margin-left: 245px;
+  height: 394px;
+  width: 305px;
+  z-index: 10;
+}
+
+.details__name {
+  color: #ffffff;
+  transition: 0.3s all ease;
+}
+
+.details__name h1 {
+  color: #080707;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 21px;
+  display: inline-block;
+}
+
+.details__details p {
+  text-indent: 5px;
+  line-height: 0.7;
+  color: #fff;
+  background-color: #1768e2;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.details__details span {
+  color: rgb(63, 121, 230);
+}
+
+.details__button {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: #1768e2;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  margin-left: 50px;
+}
+
+/* Responsive */
+@media (min-width: 300px) and (max-width: 480px) {
+  .details__container {
+    width: 350px;
+    height: 700px;
+  }
+
+  .details__a {
+    height: 270px;
+    margin-left: 5px;
+    position: inherit;
+  }
+
+  .details__a img {
+    margin-left: 20px;
+    min-width: 10rem;
+    margin-top: 30px;
+  }
+
+  .details__right {
+    margin-left: -200px;
+    background-color: transparent;
+  }
+
+  .details__info {
+    margin-left: 225px;
+  }
+}

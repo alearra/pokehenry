@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Pagination.module.css";
+import "./Pagination.css";
 
 function Pagination({ Allpokemons, pokemonsPerPage, paginated }) {
   const pageNumber = [];
@@ -7,7 +7,7 @@ function Pagination({ Allpokemons, pokemonsPerPage, paginated }) {
     pageNumber.push(i + 1);
   }
   return (
-    <ul className={styles["pagination"]}>
+    <ul className="pagination">
       {pageNumber &&
         pageNumber.map((number) => {
           return (

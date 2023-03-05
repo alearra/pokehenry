@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "./Home.module.css";
+import "./Home.css";
 import { NavLink } from "react-router-dom";
-
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,9 +13,9 @@ import {
 } from "../../redux/actions";
 
 import Cards from "../Cards/Cards";
-import NavBar from "../NavBar/NavBar";
-import Pagination from "../Pagination/Pagination";
-import Loading from "../Loading/Loading";
+import NavBar from "../../components/NavBar/NavBar";
+import Pagination from "../../components/Pagination/Pagination";
+import Loading from "../../components/Loading/Loading";
 
 function Home() {
   const dispatch = useDispatch();
@@ -34,7 +33,7 @@ function Home() {
     indexLastPokemons
   );
 
-  const [, /*order*/ setOrder] = useState("");
+  const [, setOrder] = useState("");
 
   useEffect(() => {
     dispatch(getPokemons());
@@ -44,19 +43,19 @@ function Home() {
     dispatch(getTypes());
   }, [dispatch]);
 
-  /* Resetea todos los pokemones */
+  /* resetea filtrado de pokemones */
   function handlerReset(e) {
     e.preventDefault();
     setCurrentPage(1);
     dispatch(getPokemons());
   }
 
-  /* Paginado */
+  /* paginado de app */
   const paginated = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  /* Ordenamiento alfabeticamente */
+  /* orden alfabetico */
   function handlerSortAlpha(e) {
     e.preventDefault();
     dispatch(sortPokemonsAlphabetic(e.target.value));
@@ -64,7 +63,7 @@ function Home() {
     setOrder(`${e.target.value}`);
   }
 
-  /* Ordenamiento por ataque */
+  /* orden por puntos de ataque */
   function handlerSortAttack(e) {
     e.preventDefault();
     dispatch(sortPokemonsAttack(e.target.value));
@@ -72,14 +71,14 @@ function Home() {
     setOrder(`${e.target.value}`);
   }
 
-  /* Filtrado por tipo de pokemon (2) */
+  /* filtrado de pokemones */
   function handlerFilterTypes(e) {
     e.preventDefault();
     dispatch(filterPokemonsTypes(e.target.value));
     setCurrentPage(1);
   }
 
-  /* Filtrado por creado(DB) o existente(API) */
+  /* filtrado de creados */
   function handlerFilterCreated(e) {
     e.preventDefault();
     dispatch(filterPokemonsCreated(e.target.value));
@@ -89,17 +88,17 @@ function Home() {
   return (
     <div>
       <NavBar />
-      <div className={styles["grid-container"]}>
-        {/* <div className={styles["grid-item"]}>
+      <div className="home__container">
+        {/* <div className="home__item">
           <button
-            className={styles["button-reset"]}
+            className="home__reset"
             onClick={(e) => handlerReset(e)}
           >
             Reset Pokemons
           </button>
         </div> */}
-        <div className={styles["grid-item"]}>
-          <div className={styles["box"]}>
+        <div className="home__item">
+          <div className="home__box">
             <label>Order alphabetic: </label>
             <select onChange={(e) => handlerSortAlpha(e)}>
               <option value="All">All</option>
@@ -108,8 +107,8 @@ function Home() {
             </select>
           </div>
         </div>
-        <div className={styles["grid-item"]}>
-          <div className={styles["box"]}>
+        <div className="home__item">
+          <div className="home__box">
             <label>Order by attack: </label>
             <select onChange={(e) => handlerSortAttack(e)}>
               <option value="All">All</option>
@@ -118,8 +117,8 @@ function Home() {
             </select>
           </div>
         </div>
-        <div className={styles["grid-item"]}>
-          <div className={styles["box"]}>
+        <div className="home__item">
+          <div className="home__box">
             <label>Filter by types: </label>
             <select onChange={(e) => handlerFilterTypes(e)}>
               <option value="All">All</option>
@@ -131,8 +130,8 @@ function Home() {
             </select>
           </div>
         </div>
-        <div className={styles["grid-item"]}>
-          <div className={styles["box"]}>
+        <div className="home__item">
+          <div className="home__box">
             <label>Filter by created: </label>
             <select onChange={(e) => handlerFilterCreated(e)}>
               <option value="All">All</option>
@@ -142,18 +141,18 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className={styles["grid-item"]}>
+      <div className="home__item">
         <Pagination
           Allpokemons={Allpokemons.length}
           pokemonsPerPage={pokemonsPerPage}
           paginated={paginated}
         />
       </div>
-      <div className={styles["grid-container"]}>
+      <div className="home__container">
         {currentPokemons.length ? (
           currentPokemons.map((pokemon) => {
             return (
-              <div className={styles["grid-item"]} key={pokemon.id}>
+              <div className="home__item" key={pokemon.id}>
                 <NavLink
                   to={`/pokemon/${pokemon.id}`}
                   style={{ textDecoration: "none" }}
@@ -173,7 +172,7 @@ function Home() {
           <Loading />
         )}
       </div>
-      <div className={styles["grid-item"]}>
+      <div className="home__item">
         <Pagination
           Allpokemons={Allpokemons.length}
           pokemonsPerPage={pokemonsPerPage}

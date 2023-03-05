@@ -1,5 +1,6 @@
 import {React, useEffect} from "react";
-import styles from "./Details.module.css";
+import "./Details.css";
+import backVideo from  "../../assets/media/sunmon.mp4"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -20,30 +21,25 @@ function Details() {
   },[dispatch, id])
 
   return(
-    <>
+    <section className="details">
+      <video className="details__backvideo" src={backVideo} autoPlay loop muted />
         { 
           pokemon &&
-          <div className={styles["blog-container"]}>
-            <Link to="/home"><button className={styles["blog-button"]}>Back to home</button></Link>
-            <div className={styles["left"]}>
+          <div className="details__container">
+            <Link to="/home"><button className="details__button">Return</button></Link>
+            <div className="details__a">
               <img src={pokemon.image} alt={`${pokemon.name} pokemon`} />
             </div>
-            <div className={styles["right"]}>
-                <div className={styles["blog-info"]}>
-                  <div className={styles["blog-name"]}>
+            <div className="details__b">
+                <div className="details__info">
+                  <div className="details__name">
                     <h1>{pokemon.name}</h1>
                   </div>
-                  <div className={styles["blog-details"]}>
-                      <hr/>
-                        <span><strong>Data in general</strong></span>
-                      <hr/>
+                  <div className="details__details">
                       <p>Id: {pokemon.id}</p>
                       <p>Height: {pokemon.height}</p>
                       <p>Weight: {pokemon.weight}</p>
                       <p>Types: {pokemon.types?.map(t=>`${t.name}  `)}</p>
-                      <hr/>
-                        <span><strong>Stats data</strong> </span>
-                      <hr/>
                       <p>Health Points (hp): {pokemon.hp}</p>
                       <p>Attack: {pokemon.attack}</p>
                       <p>Defense: {pokemon.defense}</p>
@@ -53,7 +49,7 @@ function Details() {
             </div>
           </div>
         }
-    </>
+    </section>
   )
 };
 

@@ -10,14 +10,16 @@ function NavBar() {
       <Search />
       <ul className="navbar__menu">
         <li>
-          <NavLink to="/" className="navbar__button">
-            A
-          </NavLink>
+          <a
+            href="https://alejandroarradev.vercel.app/"
+            target="_blank"
+            className="navbar__button"
+          >
+            <b>A</b>
+          </a>
         </li>
         <li>
-          <NavLink
-            to="/create" className="navbar__button"
-          >
+          <NavLink to="/create" className="navbar__button">
             Create Pokemon
           </NavLink>
         </li>

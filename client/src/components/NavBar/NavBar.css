@@ -1,10 +1,12 @@
-*{
+@import url("https://fonts.cdnfonts.com/css/nasalization-2");
+
+* {
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .navbar {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100px;
@@ -37,39 +39,44 @@
   padding-inline: 10px;
 }
 
-
 .navbar__menu li {
-  
 }
 
 .navbar__button {
   display: inline-block;
- padding: 0.9rem 1.8rem;
- font-size: 16px;
- font-weight: 700;
- color: #fff;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- position: relative;
- background-color: #1768e2;
- text-decoration: none;
- overflow: hidden;
- z-index: 1;
- margin-right: 10px;
+  padding: 0.9rem 1.8rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: #1768e2;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  margin-right: 10px;
+}
+
+.navbar__button b {
+  font-family: "Nasalization", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
 }
 
 .navbar__button::before {
   content: "";
- position: absolute;
- left: 0;
- top: 0;
- width: 100%;
- height: 100%;
- background-color:  #000;
- transform: translateX(-100%);
- transition: all .3s;
- z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
 }
 
 .navbar__button:hover::before {
@@ -97,7 +104,7 @@
 }
 
 @media (min-width: 300px) and (max-width: 680px) {
-  .navbar__logo  {
+  .navbar__logo {
     text-align: center;
   }
 

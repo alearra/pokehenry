@@ -9,7 +9,7 @@ function Page404() {
       <video className="page__backvideo" src={backVideo} autoPlay loop muted />
       <div className="page__container">
         <Link to="/home">
-          <button className="page__button"> 🡠 Return</button>
+          <button className="page__button">Return</button>
         </Link>
         <p className="page__container--error">404</p>
         <div className="page__title">
